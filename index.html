@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Correct meta viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Back to School Embedding Project ✨✨</title>
+    <!-- Load the Tableau Embedding API (V3) as an ES Module if required by your project -->
+    <script
+      type="module"
+      src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+    ></script>
+    <!-- Optional CSS framework for a nicer look -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>Back to School Embedding Project ✨✨</h1>
+
+    <!-- First row: filter buttons for simple filtering -->
+    <fieldset id="first_row_of_buttons">
+      <legend>Filter the view!</legend>
+      <input
+        type="button"
+        value="Oregon and Washington Only"
+        id="oregon_and_washington"
+      />
+      <input type="button" value="Clear Filter" id="clear_filter" />
+      <input type="button" value="Undo" id="undo" />
+    </fieldset>
+
+    <!-- Second row: range inputs for additional filtering -->
+    <fieldset id="second_row_of_buttons">
+      <legend>Filter cities for a range of values!</legend>
+      <input type="number" placeholder="min value" id="minValue" />
+      <input type="number" placeholder="max value" id="maxValue" />
+      <input type="button" value="Filter Range" id="filter_range" />
+    </fieldset>
+
+    <!-- Div container for the Tableau Viz -->
+    <div class="content">
+      <tableau-viz
+        id="tableauViz"
+        src="https://public.tableau.com/views/Superstore_embedded_800x800/Overview"
+        toolbar="bottom"
+        height="600px"
+        width="100%"
+      >
+      </tableau-viz>
+    </div>
+
+    <!-- Link our custom script at the bottom so that the DOM is loaded -->
+    <script src="./script.js"></script>
+  </body>
+</html>
